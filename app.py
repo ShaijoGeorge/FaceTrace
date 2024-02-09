@@ -12,14 +12,13 @@ import time
 # import db
 
 #VARIABLES
-MESSAGE = "WELCOME  " \
-          " Instruction: to register your attendence kindly click on 'a' on keyboard"
+MESSAGE = "To Mark Your Attendence Kindly Click on 'A' on Keyboard"
 
 #### Defining Flask App
 app = Flask(__name__)
 
 #### Saving Date today in 2 different formats
-datetoday = date.today().strftime("%m_%d_%y")
+datetoday = date.today().strftime("%d_%m_%y")
 datetoday2 = date.today().strftime("%d-%B-%Y")
 
 #### Initializing VideoCapture object to access WebCam
@@ -45,9 +44,10 @@ if f'Attendance-{datetoday}.csv' not in os.listdir('Attendance'):
 def totalreg():
     return len(os.listdir('static/faces'))
 
+
 #### extract the face from an image
 def extract_faces(img):
-    if img!=[]:
+    if img is not None:
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         face_points = face_detector.detectMultiScale(gray, 1.3, 5)
         return face_points
@@ -186,7 +186,7 @@ def add():
             j+=1
         if j==500:
             break
-        cv2.imshow('Adding new User',frame)
+        cv2.imshow('Adding new Student',frame)
         if cv2.waitKey(1)==27:
             break
     cap.release()
@@ -196,7 +196,7 @@ def add():
     names,rolls,times,l = extract_attendance()
     if totalreg() > 0 :
         names, rolls, times, l = extract_attendance()
-        MESSAGE = 'User added Sucessfully'
+        MESSAGE = 'Student added Sucessfully'
         print("message changed")
         return render_template('home.html',names=names,rolls=rolls,times=times,l=l,totalreg=totalreg(),datetoday2=datetoday2, mess = MESSAGE)
     else:

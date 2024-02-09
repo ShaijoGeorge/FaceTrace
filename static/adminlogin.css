@@ -14,7 +14,7 @@ body {
 }
 
 .wrapper {
-    max-width: 350px;
+    max-width: 600px;
     min-height: 500px;
     margin: 80px auto;
     padding: 40px 30px 30px 30px;
@@ -96,6 +96,39 @@ body {
     color: #039BE5;
 }
 
+#add{
+    font-size: 24px;
+        font-weight: bold;
+        border: 2px solid #17139e;
+        border-radius: 10px;
+        width:250px;
+        padding: 10px;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        color: #17139e;
+        box-shadow: 15px 15px 19px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease 0s;
+        outline: none;
+}
+#add:hover{
+    color: white;
+    background-color: #17139e;
+    box-shadow: 0px 15px 20px #6864d7;
+    transform: translateY(-7px);
+}
+
+.btn {
+    background-color: #6c3483; /* Dark purple background for the button */
+    color: white; /* Button text color */
+    border: none;
+  }
+  
+.btn:hover {
+    background-color: #5b2a6e; /* Dark purple background on hover */
+  }
+
+  
+  
 @media(max-width: 380px) {
     .wrapper {
         margin: 30px 20px;
