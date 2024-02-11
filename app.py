@@ -1,4 +1,3 @@
-import sqlite3
 import cv2
 import os
 from flask import Flask,request,render_template,redirect,session,url_for
@@ -8,8 +7,7 @@ import numpy as np
 from sklearn.neighbors import KNeighborsClassifier
 import pandas as pd
 import joblib
-import time
-# import db
+
 
 #VARIABLES
 MESSAGE = "To Mark Your Attendence Kindly Click on 'A' on Keyboard"
